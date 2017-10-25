@@ -6,6 +6,19 @@
 <h1>Eddy</h1>
 <p>loading...2018</p>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/Fi2PPHEqXsw?start=358" frameborder="0" allowfullscreen></iframe>
-</body>
+
+<div onclick="thevid=document.getElementById('thevideo');
+thevid.style.display='block'; this.style.display='none'; 
+document.getElementById('iframe').src = 
+document.getElementById('iframe').src.replace('autoplay=0','autoplay=1');">
+
+<img style="cursor: pointer;" src="http://www.belfastdigitalagency.com/wp-content/themes/responsy-v2.5/random_image1.php" alt="belfast digital marketing agency animated video" />
+</div>
+
+<div id="thevideo" style="display: none;">
+<iframe id="iframe" width="1280" height="720" src="http://www.youtube.com/embed/iy_lolGhjPE?rel=0&vq=hd720&color=white&autoplay=0&wmode=transparent&theme=light&showinfo=0&origin=http://www.belfastdigitalagency.com"
+frameborder="0" allowscriptaccess="always" allowfullscreen="true"></iframe>
+</div>
+  </body>
 
 </html>
