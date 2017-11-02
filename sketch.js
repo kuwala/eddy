@@ -1,5 +1,6 @@
 function setup() {
-  cnvs = createCanvas(1200, 2000);
+  // cnvs = createCanvas(1200, 2000);
+  cnvs = createCanvas(window.innerWidth, 200);
   cnvs.parent("p5canvas");
   // mover = new Mover(20, 20);
   movers = [];
@@ -24,10 +25,16 @@ function draw() {
   // rect(20,20,30,30);
   clear();
   // mover.update();
+  // background(51);
+  fill(60);
+  ellipse(width/2,height/2,100,100);
   for (var i = 0; i < movers.length; i++) {
     movers[i].update();
   }
 
+}
+function touchStarted() {
+  mousePressed();
 }
 function mousePressed() {
   // stuff
@@ -35,3 +42,11 @@ function mousePressed() {
   movers.push(new Mover(mouseX, mouseY));
 
 }
+
+window.onresize = function() {
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  canvas.size(w,h);
+  width = w;
+  height = h;
+};
