@@ -3,11 +3,19 @@ function setup() {
   var myWidth = 200;
   cnvs = createCanvas(window.innerWidth, myWidth);
   cnvs.parent("p5canvas");
-  // mover = new Mover(20, 20);
   movers = [];
-  movers.push(new Mover(100, 100));
-  movers.push(new Mover(random(window.innerWidth), random(myWidth)));
-  movers.push(new Mover(random(window.innerWidth), random(myWidth)));
+  // movers.push(new Mover(100, 100));
+
+  // make some initial eddiez
+  for (var i = 0; i < 5; i++) {
+    var itsX = random(window.innerWidth);
+    var itsY = random(myWidth);
+    var eddy = new Mover(itsX, itsY);
+    // progress its life animation a bit
+    // so they all start in differnt life cycles
+    eddy.life += random(300);
+    movers.push(eddy);
+  }
   frameRate(30);
 
 
