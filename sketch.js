@@ -1,10 +1,13 @@
 function setup() {
   // cnvs = createCanvas(1200, 2000);
-  cnvs = createCanvas(window.innerWidth, 200);
+  var myWidth = 200;
+  cnvs = createCanvas(window.innerWidth, myWidth);
   cnvs.parent("p5canvas");
   // mover = new Mover(20, 20);
   movers = [];
   movers.push(new Mover(100, 100));
+  movers.push(new Mover(random(window.innerWidth), random(myWidth)));
+  movers.push(new Mover(random(window.innerWidth), random(myWidth)));
   frameRate(30);
 
 
@@ -13,11 +16,18 @@ function Mover(xx, yy) {
   this.x = xx;
   this.y = yy;
   this.size = 20 + random(10);
+  this.life = 0;
 
   this.update = function () {
+    this.life += 0.1;
     this.x += random(4) - 2;
     this.y += random(4) - 2;
-    rect(this.x,this.y, this.size, this.size);
+    // var mod = random(8);
+    mod = this.life % 10;
+    fill(60 + mod*2);
+    // rect(this.x,this.y, this.size, this.size);
+    textSize(16 + mod*10);
+    text("e", this.x, this.y )
   }
 
 }

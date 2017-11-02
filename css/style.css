@@ -6,3 +6,20 @@
 .centered-text {
   text-align: center;
 }
+
+.thumbnail {
+  max-width: 100%;
+  max-height: 100;
+}
+.poster {
+  /*max-width: 360px;*/
+  filter: invert(100%);
+  transition: 3s;
+}
+.poster:hover {
+  filter: invert(0%);
+  transition: 2s;
+}
+.invert {
+  filter: invert(100%);
+}
